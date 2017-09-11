@@ -1,0 +1,36 @@
+$(document).ready()
+这个函数中的代码只会在我们的页面加载时候运行一次，确保执行js之前页面所有的dom已经准备就绪。
+
+$("#id").on("click". fuction() {
+	$(".class").html();
+})
+
+应用程序接口（API）：计算机之间相互交流沟通的工具。
+Json
+
+$.getJSON("/json/cats.json", function(json) {
+        debugger;
+        $(".message").html(JSON.stringify(json));
+      });
+JSON.stringify(json) 将Json格式转化为字符串
+
+$.getJSON("/json/cats.json", function(json) {
+        var html = "";
+        //循环
+        json.forEach(function(val) {
+        	//取得val中的key数组，复制给keys
+          var keys = Object.keys(val);
+          html += "<div class= 'cat'>";
+          keys.forEach(function(key) {
+            html += "<b>" + key + "</b>:" + val[key] + "<br>";
+          });
+          html += "</div><br>";
+        });
+  $(".message").html(html);
+ });
+
+json的过滤器
+json.filter(funtion(val){
+	return val.id !== 1;
+})
+

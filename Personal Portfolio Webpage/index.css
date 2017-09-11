@@ -1,0 +1,155 @@
+body {
+	background-color: #888;
+}
+
+#navbarBottom {
+	background-color: #722872;
+	height: 65px;
+	font-size: 22px;
+}
+
+#navbarBottom a{
+	height: 65px;
+}
+
+#navbarBottom a:hover {
+	background-color: #e7e7e7;
+}
+
+#junK {
+	font-size: 25px;
+}
+
+#innerContain {
+	padding-top: 65px;
+	height: 500px;
+	color: #fff;
+}
+
+.panel-light {
+	color: #888;
+	background-color: #eee;
+	padding: 20px;
+}
+
+.panel-dark {
+	background-color: rgb(170, 170, 170);
+	text-align: center;
+	color: #fff;
+	padding-bottom: 30px;
+}
+
+.tdH {
+	width: 10%
+}
+
+.tdB {
+	width: 25%;
+	font-weight: bold;
+}
+
+.tdP {
+	background-color: #eee;
+}
+
+#myPhoto {
+	height: 250px;
+}
+
+hr.star-black {
+	border-top: solid 5px;
+	border-color: #888;
+	text-align: right;
+	max-width: 580px;
+	margin: 20px auto;
+}
+
+hr.star-black:after {
+	color: #888;
+	background-color: #eee;
+	content: '=ω=';
+	display: inline-block;
+	position: relative;
+	top: -.8em;
+	padding: 0 .25em;
+	font-size: 2em;
+}
+
+hr.star-bright {
+	border-top: solid 5px;
+	border-color: #fff;
+	text-align: center;
+	max-width: 580px;
+	margin: 50px auto;
+}
+
+hr.star-bright:after {
+	color: #fff;
+	background-color: #aaa;
+	content: '0.0';
+	display: inline-block;
+	position: relative;
+	top: -.8em;
+	padding: 0 .25em;
+	font-size: 2em;
+}
+
+.myProgress {
+	width: 80%;
+	display: inline-block;
+	float: left;
+}
+
+.process_text {
+	float: left;
+	width: 320px;
+	text-align: left;
+	font-size: 20px;
+	margin-left: 30px;
+}
+
+.tipText {
+	float: right;
+	font-size: 15px;
+	text-align: left;
+}
+
+.company_text {
+	font-size: 25px;
+	margin: 20px;
+}
+
+#exprience h1{
+	text-align: center;
+}
+
+#selfAppraisal p {
+	width: 100%;
+	height: 250px;
+	text-align: left;
+	border-radius: 10px;
+	border: solid 1px;
+	font-size: 20px;
+	padding: 10px;
+}
+
+#splitCenter {
+	width: 5px;
+	height: 250px;
+	background: #fff;
+	margin: 0px auto;
+}
+
+#selfAppraisal img {
+	height: 40px;
+	margin-right: 5px;
+}
+
+#showLink {
+	text-align: left;
+	font-size: 18px;
+}
+
+#showLink div {
+	height: 70px;
+}

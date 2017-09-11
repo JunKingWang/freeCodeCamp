@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JunKing Personal Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body data-spy="scroll" data-target=".navbar">
+	<!-- 导航栏 -->
+	<nav class="navbar navbar-default navbar-fixed-top" id="navbarBottom">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" id="junK">JKING</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#introduction">我的求职</a></li>
+					<li><a href="#technique">我的技能</a></li>
+					<li><a href="#exprience">工作经历</a></li>
+					<li><a href="#selfAppraisal">自我评价</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="innerContain">
+		<div class="container-fluid panel-light" id="introduction">
+			<h1>我的求职--<small>Web前端开发</small></h1>
+			<hr class="star-black"></hr>
+			<table class="table table-hover table-responsive text-center" id="introTable">
+				<tr>
+					<td class="tdH">姓名</td>
+					<td class="tdB">王丽君</td>
+					<td class="tdH">毕业学校</td>
+					<td class="tdB">南京邮电大学</td>
+					<td rowspan="5" class="tdP"><img src="./img/introduction.png" class="img-circle" id="myPhoto"></td>
+				</tr>
+				<tr>
+					<td class="tdH">性别</td>
+					<td class="tdB">女</td>
+					<td class="tdH">专业</td>
+					<td class="tdB">数字媒体技术</td>
+				</tr>
+				<tr>
+					<td class="tdH">出生年月</td>
+					<td class="tdB">1993.03</td>
+					<td class="tdH">学历</td>
+					<td class="tdB">本科</td>
+				</tr>
+				<tr>
+					<td class="tdH">毕业时间</td>
+					<td class="tdB">2016.06</td>
+					<td class="tdH">辅修专业</td>
+					<td class="tdB">电子商务物流</td>
+				</tr>
+				<tr>
+					<td class="tdH">联系电话</td>
+					<td class="tdB">18362972686</td>
+					<td class="tdH">电子邮件</td>
+					<td class="tdB">1243402013@qq.com</td>
+				</tr>
+			</table>
+		</div>
+		<div id="technique" class="container-fluid panel-dark">
+			<h1>我的技能</h1>
+			<hr class="star-bright"></hr>
+			<ul class="tipText">
+				<li>绿色--自我感觉良好</li>
+				<li>蓝色--还阔以~</li>
+				<li>黄色--了解，有待深入</li>
+				<li>红色--即将学习</li>
+			</ul>
+			<!-- 动画效果IE不兼容 -->
+			<div class="myProgress">
+				<span class="process_text">HTML, Javascript, Css</span>
+				<div class="progress progress-striped active">
+					<div  class="progress-bar progress-bar-Info" role="progressbar"
+					aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+					style="width: 70%;">
+						<span class="sr-only">熟练70%</span>
+					</div>
+				</div>
+			</div>
+			<div class="myProgress">
+				<span class="process_text">Java, Oracle</span>
+				<div class="progress progress-striped active">
+					<div class="progress-bar progress-bar-Info" role="progressbar"
+				aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+				style="width: 60%;">
+						<span class="sr-only">熟练60%</span>
+					</div>
+				</div>
+			</div>
+			<div class="myProgress">
+				<span class="process_text">AngularJs, Bootstrap</span>
+					<div class="progress progress-striped active">
+						<div class="progress-bar progress-bar-warning" role="progressbar"
+						aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+						style="width: 40%;">
+							<span class="sr-only">了解40%</span>
+					</div>
+				</div>
+			</div>
+			<div class="myProgress">
+				<span class="process_text">JQuery, Node.js, Ajax</span>
+				<div class="progress progress-striped active">
+					<div class="progress-bar progress-bar-warning" role="progressbar"
+					aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+					style="width: 30%;">
+						<span class="sr-only">了解30%</span>
+					</div>
+				</div>
+			</div>
+			<div class="myProgress">
+				<span class="process_text">使用浏览器页面调试</span>
+				<div class="progress progress-striped active">
+					<div class="progress-bar progress-bar-success" role="progressbar"
+					aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+					style="width: 90%;">
+						<span class="sr-only">熟练90%</span>
+					</div>
+				</div>
+			</div>
+			<div class="myProgress">
+				<span class="process_text">eclipse, sublime等开发工具的使用</span>
+					<div class="progress progress-striped active">
+						<div class="progress-bar progress-bar-success" role="progressbar"
+						aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+						style="width: 80%;">
+						<span class="sr-only">熟练80%</span>
+					</div>
+				</div>
+			</div>
+			<div class="myProgress">
+				<span class="process_text">还有其他很多待学习的知识</span>
+				<div class="progress progress-striped active">
+					<div class="progress-bar progress-bar-danger" role="progressbar"
+					aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+					style="width: 10%;">
+						<span class="sr-only">了解10%</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="exprience" class="container-fluid panel-light">
+			<h1>工作经验</h1>
+			<hr class="star-black"></hr>
+			<p class="company_text">2016.5~2017.7 上海易宝软件南京分公司</p>
+			<!-- 这个效果IE不兼容 -->
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapseOne">
+								2016.5~2017.2 华为 BES项C00版本 AD开户组前端工程师（点击查看或关闭）
+							</a>
+						</h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<p>开发语言：Java，Js，Html，Css, sql，AngularJs（UEE）</p>
+							<p>开发工具：eclipse，sublime, fiddler         数据库：Oracle</p>
+							<p>项目描述：CRM系统，电信项目，是设计江苏，宁夏，山东等国内局点，哥伦比亚，尼日利亚，厄瓜多尔等海外局点的大型项目。</p>
+							<p>项目贡献：本人隶属于开户组，负责开户组的前端需求开发和日常维护。</p>
+							（1）实现的功能需求包括：
+							<ul>
+								<li>潜在客户入库；</li>
+								<li>宽带用户改密码；</li>
+								<li>开户证件信息录，新客户信息入库，老客户信息展示等；</li>
+								<li>优化账户信息，以表格形式平铺；</li>
+								<li>各种前端及后台的校验；</li>
+								<li>批量销户页面配置和配合联调。</li>
+							</ul>
+							（2）系统日常维护，处理问题单过百。
+						</div>
+					</div>
+				</div>	
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" 
+							href="#collapseTwo">
+								2017.3~2017.7，华为HKT BES C10版本 APQ组前端工程师，兼任合作方MDE（点击查看或关闭）
+							</a>
+						</h4>
+					</div>
+					<div id="collapseTwo" class="panel-collapse collapse">
+						<div class="panel-body">
+							<p>开发语言：Java，Js，Html，Css, sql，AngularJs(UEE), Groovy</p> 
+							<p>开发工具：eclipse，sublime, fiddler         数据库：Oracle</p>
+							<p>项目描述：CRM系统，besC10版本，电信项目。APQ(agreement-price-quote)，涉及香港局点的合同管理，报价单管理和算费管理的集团业务。</p>
+							<p>项目贡献：本人隶属于APQ组，兼任合作方MDE职务。</p>
+							（1）实现的功能需求包括：
+							<ul>
+								<li>报价单搜索功能的调整和新添审批功能的前端页面开发（多条件查询和列表展示页面，报价单信息展示页面，功能按钮点击成功页面等等），负责整个报价单搜索及新添审批功能需求的联调。</li>
+								<li>合同延期功能中的合同信息展示，实现合同延期功能并且满足多种场景的前端页面。负责整个合同延期功能的联调工作。</li>
+								<li>合同多条件查询的后台接口的提供。</li>
+							</ul>
+							（2）系统日常维护，处理问题单过百。<br>
+							（3）兼任合作方MDE,帮助指导新员工分析需求，保证功能的正确实现，帮助新员工熟悉业务并提供技术支持，处理组内较为复杂的问题。
+						</div>
+					</div>
+				</div>			
+			</div>
+		</div>
+		<div id="selfAppraisal" class="container-fluid panel-dark">
+			<h1>自我评价</h1>
+			<hr class="star-bright"></hr>
+  			<div class="row">
+      			<div class="col-md-4 col-md-offset-1">
+	      			<p>
+						本人性格开朗，待人真诚，容易与人相处，做事比较认真，适应能力较强。有良好的咨询能力、团队精神和协作精神，良好的沟通、协调能力，有责任感，耐心，做事不会半途而废。在未来的工作中，我将以充沛的精力，刻苦钻研的精神来努力工作，稳定地提高自己的工作能力。
+					</p>
+				</div>
+      			<div class="col-md-2"><div id="splitCenter"></div></div>
+      			<div class="col-md-5">
+      				<div id="showLink">
+      					<div>
+							<a href="https://github.com/JunKingWang"><img src="./img/git.jpg" class="img-circle">虽然这里面东西不多，但我会一点点积累~</a>
+						</div>
+						<div>
+							<a href="http://service.weibo.com/share/share.php?appkey=&title=https://github.com/JunKingWang&url=&pic=&searchPic=false&style=simple" target="_blank"><img src="./img/xinlang.jpg" class="img-circle">将我的GitHub分享到微博~</a>
+						</div>
+						<div>
+							<a href="mailto:1243402013@qq.com"><img src="./img/email.jpg" class="img-circle">打开邮件客户端~</a>
+						</div>
+					</div>
+      			</div>
+   			</div>
+		</div>
+	</div>
+</body>
+</html>

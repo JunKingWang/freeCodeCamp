@@ -1,0 +1,523 @@
+什么是 Bootstrap？
+Bootstrap 是一个用于快速开发 Web 应用程序和网站的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的。
+
+引入：
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+ 
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+Bootstrap CSS：
+使用 HTML5 文档类型（Doctype）。
+<!DOCTYPE html>
+<html>
+....
+</html>
+
+移动设备优先-->移动设备优先是 Bootstrap 3 的最显著的变化。
+为了让 Bootstrap开发的网站对移动设备友好，确保适当的绘制和触屏缩放，需要在网页的 head 之中添加 viewport meta 标签，如下所示：
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+width 属性控制设备的宽度。假设您的网站将被带有不同屏幕分辨率的设备浏览，那么将它设置为 device-width(设备宽度)可以确保它能正确呈现在不同设备上。
+initial-scale=1.0确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放。
+在移动设备浏览器上，通过为 viewport meta 标签添加 user-scalable=no 可以禁用其缩放（zooming）功能。
+通常情况下，maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕，就能让您的网站看上去更像原生应用的感觉。
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+响应式图像--img-responsive
+.img-responsive {
+	display: inline-block;
+	height: auto;
+	max-width: 100%;
+}
+
+容器（Container）
+
+Bootstrap 网格系统
+系统会自动分为最多12列，优先设计更小的宽度
+Bootstrap 网格系统（Grid System）的工作原理
+网格系统通过一系列包含内容的行和列来创建页面布局。下面列出了 Bootstrap 网格系统是如何工作的：
+1、行必须放置在.containerclass内，以便获得适当的对齐（alignment）和内边距（padding）。
+2、使用行来创建列的水平组。
+3、内容应该放置在列内，且唯有列可以是行的直接子元素。
+4、预定义的网格类，比如 .row 和 .col-xs-4，可用于快速创建网格布局。LESS 混合类可用于更多语义布局。
+5、列通过内边距（padding）来创建列内容之间的间隙。该内边距是通过.rows 上的外边距（margin）取负，表示第一列和最后一列的行偏移。
+网格系统是通过指定您想要横跨的十二个可用的列来创建的。例如，要创建三个相等的列，则使用三个 .col-xs-4。
+
+媒体查询：
+媒体查询是非常别致的"有条件的CSS规则"。它只适用于一些基于某些规定条件的 CSS。如果满足那些条件，则应用相应的样式。
+Bootstrap中的媒体查询允许您基于视口大小移动、显示并隐藏内容。下面的媒体查询在LESS文件中使用，用来创建 Bootstrap 网格系统中的关键的分界点阈值。
+/* 超小设备（手机，小于 768px） */
+/* Bootstrap 中默认情况下没有媒体查询 */
+
+/* 小型设备（平板电脑，768px 起） */
+@media (min-width: @screen-sm-min) { ... }
+
+/* 中型设备（台式电脑，992px 起） */
+@media (min-width: @screen-md-min) { ... }
+
+/* 大型设备（大台式电脑，1200px 起） */
+@media (min-width: @screen-lg-min) { ... }
+
+基本的网络结构：
+<div class="container">
+   <div class="row">
+      <div class="col-*-*"></div>
+      <div class="col-*-*"></div>      
+   </div>
+   <div class="row">...</div>
+</div>
+<div class="container">....
+适用于小中大型设备：
+<div class="col-sm-3 col-md-6 col-lg-4">....</div>
+<div class="col-sm-9 col-md-6 col-lg-8">....</div>
+col-xs-* col-sm-* col-md-* col-lg-*
+
+偏移列
+ .col-md-offset-*
+
+嵌套列
+为了在内容中嵌套默认的网格，请添加一个新的 .row，并在一个已有的 .col-md-* 列内添加一组 .col-md-* 列。被嵌套的行应包含一组列，这组列个数不能超过12（其实，没有要求你必须占满12列）。
+
+列排序
+互换
+ .col-md-push-*  .col-md-pull-*
+
+ 内联子标题
+ <h1>我是标题1 h1. <small>我是副标题1 h1</small></h1>
+
+ 引导主体副本
+ 为了给段落添加强调文本，则可以添加class="lead"，这将得到更大更粗、行高更高的文本
+
+ 强调：
+ <small>本行内容是在标签内</small><br>
+<strong>本行内容是在标签内</strong><br>
+<em>本行内容是在标签内，并呈现为斜体</em><br>
+<p class="text-left">向左对齐文本</p>
+<p class="text-center">居中对齐文本</p>
+<p class="text-right">向右对齐文本</p>
+<p class="text-muted">本行内容是减弱的</p>
+<p class="text-primary">本行内容带有一个 primary class</p>
+<p class="text-success">本行内容带有一个 success class</p>
+<p class="text-info">本行内容带有一个 info class</p>
+<p class="text-warning">本行内容带有一个 warning class</p>
+<p class="text-danger">本行内容带有一个 danger class</p>
+
+<small>小</small>
+<strong>加粗</strong>
+<em>斜体</em>
+class="text-left" 左对齐
+class="text-center" 居中
+class="text-right" 右对齐
+class="text-muted" 内容减弱
+class="text-primary" primary
+class="text-success" success
+class="text-info" info
+class="text-warning" warning
+class="text-danger" danger
+
+缩写：
+<abbr></abbr>
+initialism 更小的字体文本
+
+地址：
+<address></address>默认为display:block;，您需要使用标签来为封闭的地址文本添加换行。
+
+引用：
+<blockquote>
+	<p>这是一个默认的引用实例。</p>
+</blockquote>
+<blockquote>
+	这是一个带有源标题的引用。<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+</blockquote>
+<blockquote class="pull-right">
+	这是一个向右对齐的引用。<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+</blockquote> 
+
+列表：
+有序列表<ol><li></li></ol>
+无序列表<ul><li></li></ul>
+class="list-unstyled" 没有前缀
+class="list-inline" 内联列表，在一行里面
+定义列表：在这种类型的列表中，每个列表项可以包含 <dt> 和 <dd> 元素。<dt> 代表 定义术语，就像字典，这是被定义的属于（或短语）。接着，<dd> 是 <dt> 的描述。您可以使用 class dl-horizontal 把 <dl> 行中的属于与描述并排显示。
+<dl>
+	<dt></dt>
+	<dd></dd>
+</dl>
+水平定义的列表
+<dl class="dl-horizontal">
+  <dt>Description 1</dt>
+  <dd>Item 1</dd>
+  <dt>Description 2</dt>
+  <dd>Item 2</dd>
+</dl>
+
+Bootstrap代码
+内联：<code>
+块：<pre>
+
+Bootstrap表格
+表格类：
+.tabel 只有行线
+.tabel-striped 斑马线条纹，IE8不支持
+.tabel-bordered 添加边框
+.tabel-hover 鼠标悬停状态 
+.tabel-condensed 表格更加紧凑
+
+<tr>,<th>,<td>类：
+.active 悬停
+.success 表示成功操作
+.info 表示信息变化的操作
+.warning 表示警告操作
+.danger 表示危险操作
+
+响应式表格添加一个.tabel-responsive
+
+Bootstrop表单
+（1）垂直或基本表单
+向父 <form> 元素添加 role="form"。
+把标签和控件放在一个带有 class .form-group 的 <div> 中。这是获取最佳间距所必需的。
+向所有的文本元素 <input>、<textarea> 和 <select> 添加 class ="form-control" 。
+
+（2）内联表单
+如果需要创建一个表单，它的所有元素是内联的，向左对齐的，标签是并排的，请向 <form> 标签添加 class .form-inline。
+
+支持的表单控件
+Bootstrap 支持最常见的表单控件，主要是 input、textarea、checkbox、radio 和 select。
+对一系列复选框和单选框使用.checkbox-inline或.radio-inlineclass，控制它们显示在同一行上。
+使用 multiple="multiple" 允许用户选择多个选项。
+当您需要在一个水平表单内的表单标签后放置纯文本时，请在 <p> 上使用 class .form-control-static。
+
+表单控件不可用--disabled
+
+表单空间的大小 类 .input-lg/sm   .col-lg-* 
+
+Bootstrap 表单控件可以在输入框input上有一个块级帮助文本。为了添加一个占用整个宽度的内容块,请在 <input>后使用.help-block。
+
+验证状态：
+.has-warning、 .has-error 或 .has-success
+
+按钮：
+类：
+btn btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link btn-lg/sm/xs .btn-block active disabled 
+
+Bootstrap图片.img-round:6px圆角图片
+			 .img-circle：圆形图片
+			 .img-thumbnail: 添加内边距和灰色的边框
+
+响应式图片：.img-responsive
+
+Bootstrop辅助类
+.text-muted
+.text-primary
+.text-success
+.text-info
+.text-warning
+.text-danger
+
+.bg-primary
+.bg-success
+.bg-info
+.bg-warning
+.bg-danger
+
+.pull-left/right
+.center-block
+关闭图标：.close
+插入符： .caret
+
+Bootstrap字体图标
+
+Bootstrap下拉菜单
+
+Bootstrap 按钮组
+.btn-group 组
+.btn-toolbar 群
+.btn-group-lg, .btn-group-sm, .btn-group-xs 大小
+.btn-group-vertical 垂直显示
+
+Bootstrap 按钮下拉菜单
+<div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">默认
+    <!-- 下拉的那个按钮 -->
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li>
+            <a href="#">功能</a>
+        </li>
+        <li>
+            <a href="#">另一个功能</a>
+        </li>
+        <li>
+            <a href="#">其他</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="#">分离的链接</a>
+        </li>
+    </ul>
+</div>
+
+分割的按钮下拉菜单：
+<div class="btn-group">
+    <button type="button" class="btn btn-default">默认</button>
+    <button type="button" class="btn btn-default dropdown-toggle" 
+        data-toggle="dropdown">
+        <span class="caret"></span>
+        <span class="sr-only">切换下拉菜单</span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li><a href="#">功能</a></li>
+        <li><a href="#">另一个功能</a></li>
+        <li><a href="#">其他</a></li>
+        <li class="divider"></li>
+        <li><a href="#">分离的链接</a></li>
+    </ul>
+</div>
+
+按钮上拉菜单
+添加：.dropup
+
+Bootstrap 输入框组：
+.input-group-addon
+
+Bootstrap导航元素：
+表格导航或者标签：
+<p>标签式的导航菜单</p>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">SVN</a></li>
+  <li><a href="#">iOS</a></li>
+  <li><a href="#">VB.Net</a></li>
+  <li><a href="#">Java</a></li>
+  <li><a href="#">PHP</a></li>
+</ul>
+
+胶囊式的导航栏
+<p>基本的胶囊式导航菜单</p>
+<ul class="nav nav-pills">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">SVN</a></li>
+  <li><a href="#">iOS</a></li>
+  <li><a href="#">VB.Net</a></li>
+  <li><a href="#">Java</a></li>
+  <li><a href="#">PHP</a></li>
+</ul>
+
+垂直的胶囊式导航菜单
+<p>垂直的胶囊式导航菜单</p>
+<ul class="nav nav-pills nav-stacked">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">SVN</a></li>
+  <li><a href="#">iOS</a></li>
+  <li><a href="#">VB.Net</a></li>
+  <li><a href="#">Java</a></li>
+  <li><a href="#">PHP</a></li>
+</ul>
+
+两端对齐导航栏：nav-justified
+
+禁用链接对每个 .nav class，如果添加了.disabledclass，则会创建一个灰色的链接，同时禁用了该链接的:hover状态
+
+Bootstrap 导航栏
+创建一个默认的导航栏的步骤如下：
+向 <nav> 标签添加 class .navbar、.navbar-default。
+向上面的元素添加 role="navigation"，有助于增加可访问性。
+向 <div> 元素添加一个标题 class .navbar-header，内部包含了带有 class navbar-brand 的 <a> 元素。这会让文本看起来更大一号。
+为了向导航栏添加链接，只需要简单地添加带有 class .nav、.navbar-nav 的无序列表即可。
+
+响应式的导航栏
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#example-navbar-collapse">
+            <span class="sr-only">切换导航</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">菜鸟教程</a>
+    </div>
+    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">iOS</a></li>
+            <li><a href="#">SVN</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Java <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">jmeter</a></li>
+                    <li><a href="#">EJB</a></li>
+                    <li><a href="#">Jasper Report</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">分离的链接</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">另一个分离的链接</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+
+导航栏中的表单:.navbar-form 
+
+导航栏中的按钮:
+
+导航栏中的文本: .navbar-text
+
+结合图标的导航链接:  glyphicon glyphicon-* 
+
+组件对齐方式:  .navbar-left 或 .navbar-right
+
+为了防止导航栏与页面主体中的其他内容的顶部相交错，请向 <body> 标签添加至少50像素的内边距（padding），内边距的值可以根据您的需要进行设置。
+
+固定到顶部: .navbar-fixed-top
+
+固定到底部: .navbar-fixed-bottom
+
+静态的顶部: .navbar-static-top 不需要添加内边距
+
+反色的导航栏：黑底白字 .navbar-inverse 
+
+面包屑导航栏： 
+<ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">2013</a></li>
+    <li class="active">十一月</li>
+</ol>
+
+Bootstrap 分页：
+无序列表：.pagination
+.active .disabled
+分页的大小: .pagination-lg  .pagination  .pagination-sm
+
+翻页（Pager）
+<ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+</ul>
+
+Bootstrap 标签
+<span class="label label-default">默认标签</span>
+<span class="label label-primary">主要标签</span>
+<span class="label label-success">成功标签</span>
+<span class="label label-info">信息标签</span>
+<span class="label label-warning">警告标签</span>
+<span class="label label-danger">危险标签</span>
+
+Bootstrap 徽章（Badges）
+例如：展示未读邮箱
+<span class="badge">3</span>
+
+Bootstrap 超大屏幕（Jumbotron）
+
+Bootstrap 页面标题（Page Header）
+
+Bootstrap 缩略图
+ .thumbnail
+ 这会添加四个像素的内边距（padding）和一个灰色的边框。
+当鼠标悬停在图像上时，会动画显示出图像的轮廓。
+
+Bootstrap 警告（Alerts）
+ .alert-success、.alert-info、.alert-warning、.alert-danger
+
+可取消的警告（Dismissal Alerts）
+通过创建一个 <div>，并向其添加一个 .alert class 和四个上下文 class（即 .alert-success、.alert-info、.alert-warning、.alert-danger）之一，来添加一个基本的警告框。
+同时向上面的 <div> class 添加可选的 .alert-dismissable。
+添加一个关闭按钮。
+
+警告（Alerts）中的链接
+通过创建一个 <div>，并向其添加一个 .alert class 和四个上下文 class（即 .alert-success、.alert-info、.alert-warning、.alert-danger）之一，来添加一个基本的警告框。
+使用 .alert-link 实体类来快速提供带有匹配颜色的链接。
+
+Bootstrop进度条
+<div class="progress progress-striped(条纹) active(带动画效果)">
+	<div class="progress-bar progress-bar-success/progress-bar-info/progress-bar-danger/progress-bar-warning(颜色)" role="progressbar" aria-valuenow="60"
+		 aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+		<span class="sr-only">40% 完成</span>
+	</div>
+	<!--若在整理添加进度条，会出现叠加效果 -->
+</div>
+
+Bootstrap 多媒体对象（Media Object）
+.media：该class允许将媒体对象里的多媒体（图像、视频、音频）浮动到内容区块的左边或者右边。
+.media-list：如果你需要一个列表，各项内容是无序列表的一部分，可以使用该 class。可用于评论列表与文章列表。
+可嵌套的媒体对象
+
+Bootstrap 列表组
+列表组件用于以列表形式呈现复杂的和自定义的内容。
+(1)向元素 <ul> 添加 class .list-group。
+(2)向 <li> 添加 class .list-group-item。
+
+向列表组添加徽章:
+我们可以向任意的列表项添加徽章组件，它会自动定位到右边。只需要在 <li> 元素中添加 <span class="badge"> 即可。
+
+向列表组添加自定义内容:
+我们可以向上面已添加链接的列表组添加任意的 HTML 内容。
+
+Bootstrap 面板（Panels）：
+<div class="panel panel-default">
+    <div class="panel-body">
+        这是一个基本的面板
+    </div>
+</div>
+
+.panel .panel-default .panel-heading .panel-body .panel-title .panel-footer .panel-primary/info/warning/danger
+
+Bootstrap Well:
+Well 是一种会引起内容凹陷显示或插图效果的容器 <div>。
+.well .well-lg .well-sm
+
+Bootstrap 插件 所有的插件依赖于 jQuery
+通过 data 属性 API 就能使用所有的 Bootstrap 插件
+
+关闭data属性API的方法，即解除以data-api为命名空间并绑定在文档上的事件。
+$(document).off('.data-api');
+如需关闭一个特定的插件，只需要在data-api命名空间前加上该插件的名称作为命名空间即可:
+$(document).off('.alert.data-api');
+
+支持单独或者链式调用
+$(".btn.danger").button("toggle").addClass("fat");
+
+所有的方法都可以接受一个可选的选项对象作为参数，或者一个代表特定方法的字符串，或者不带任何参数（这种情况下，将会初始化插件为默认行为），如下所示：
+// 初始化为默认行为
+$("#myModal").modal()    
+ // 初始化为不支持键盘               
+$("#myModal").modal({ keyboard: false })  
+// 初始化并立即调用 show
+$("#myModal").modal('show')  
+
+避免命名空间冲突
+某些时候 Bootstrap 插件可能需要与其他 UI 框架一起使用。在这种情况下，可能会发生命名空间冲突。如果不幸发生了这种情况，你可以通过调用插件的 .noConflict 方法恢复其原始值。
+// 返回 $.fn.button 之前所赋的值
+var bootstrapButton = $.fn.button.noConflict() 
+// 为 $().bootstrapBtn 赋予 Bootstrap 功能					       
+$.fn.bootstrapBtn = bootstrapButton   
+
+事件：
+动词不定式：ex:show
+过去分词式：ex:shown
+
+Bootstrap插件（用到的时候再看）
+		 模态框
+		 下拉菜单交互：下拉菜单切换有一个简单的方法用来显示或隐藏下拉菜单。$().dropdown('toggle')；
+		 滚动监听：自动更新导航插件，会根据滚动条的位置自动更新对应的导航目标。其基本的实现是随着您的滚动，基于滚动条的位置向导航栏添加 .active class。
+		 Bootstrap 标签页（Tab）插件
+		 提示工具插件
+		 Bootstrap 弹出框（Popover）插件
+		 警告框插件
+		 按钮插件
+		 轮播插件
+		 附加导航（Affix）插件
+
+
+
+
+
